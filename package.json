@@ -1,0 +1,42 @@
+{
+  "name": "breakframes",
+  "productName": "Breakframes",
+  "version": "0.0.1",
+  "main": "main/index.js",
+  "scripts": {
+    "dev": "npm start",
+    "start": "electron .",
+    "build-renderer": "next build renderer && next export renderer",
+    "build-electron": "tsc -p electron-src",
+    "build": "yarn build-renderer && yarn build-electron",
+    "dist": "npm run build && electron-builder --dir",
+    "type-check": "tsc"
+  },
+  "build": {
+    "asar": false,
+    "extraResources": [
+      {
+        "from": "renderer/out",
+        "to": "app/renderer"
+      }
+    ]
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-optional-chaining": "^7.6.0",
+    "@types/next": "8.0.6",
+    "@types/node": "^12.11.7",
+    "@types/react": "^16.9.11",
+    "@types/react-dom": "^16.9.3",
+    "electron": "^7.0.0",
+    "electron-builder": "^21.2.0",
+    "next": "latest",
+    "typescript": "^3.7.1-rc"
+  },
+  "dependencies": {
+    "electron-is-dev": "^1.1.0",
+    "electron-next": "^3.1.5",
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0",
+    "use-timeout": "^1.1.0"
+  }
+}

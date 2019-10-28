@@ -1,0 +1,7 @@
+.DS_Store
+.vscode
+dist
+main
+node_modules
+renderer/out
+renderer/.next
