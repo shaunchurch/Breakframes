@@ -15,8 +15,8 @@ interface Size {
 
 const sizes: Size[] = [
   { name: "one", width: 320, height: 640 },
-  { name: "two", width: 400, height: 758 },
-  { name: "three", width: 768, height: 1024 },
+  { name: "two", width: 400, height: 640 },
+  { name: "three", width: 768, height: 640 },
   { name: "four", width: 1024, height: 800 }
 ];
 
@@ -52,17 +52,20 @@ const Home: NextPage = () => {
         <title>Breakframes</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <form onSubmit={handleSubmit} style={{ background: "#222" }}>
+      <form onSubmit={handleSubmit} style={{ background: "#000103" }}>
         <input
           style={{
             background: "#222",
             color: "#ccc  ",
             border: "1px solid #666",
-            borderRadius: "3px",
-            padding: "10px",
-            margin: "10px",
+            borderRadius: "4px",
+            padding: "5px",
+            margin: "5px 10px",
             width: "500px",
-            fontSize: "16px"
+            fontSize: "16px",
+            position: "absolute",
+            right: "10px",
+            bottom: "10px"
           }}
           type="text"
           name="url"
@@ -76,7 +79,8 @@ const Home: NextPage = () => {
           display: "flex",
           height: "100%",
           width: "100%",
-          background: "#222"
+          background: "#000103",
+          flexWrap: "wrap"
         }}
       >
         {sizes.map(frame => (
@@ -93,12 +97,7 @@ const Home: NextPage = () => {
           />
         ))}
       </main>
-      <pre>
-        {masterFrame} {scrollPosition}
-      </pre>
-      <main style={{ display: "flex", background: "#222" }}>
-        {/* <Iframe src={url} width={1280} height={640} /> */}
-      </main>
+
       <style jsx global>{`
         *,
         *:after,

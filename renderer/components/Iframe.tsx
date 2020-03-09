@@ -65,11 +65,28 @@ export default function Iframe({
   }, [isLoaded]);
 
   return (
-    <section style={{ display: "block" }}>
-      <span style={{ color: "#888", padding: "10px", fontSize: "12px" }}>
+    <section
+      style={{
+        display: "block",
+        padding: "0px",
+        margin: "0px",
+        position: "relative",
+        marginBottom: "10px"
+      }}
+    >
+      <span
+        style={{
+          color: "rgba(0,0,0,.3)",
+          padding: "5px 10px 5px 20px",
+          borderRadius: "5px",
+          fontSize: "12px",
+          position: "absolute",
+          background: "rgba(0,0,0,.05)"
+        }}
+      >
         {width}x{height}
       </span>
-      <br />
+
       <iframe
         onLoad={() => setIsLoaded(true)}
         id={id}
@@ -79,12 +96,14 @@ export default function Iframe({
         sandbox="allow-same-origin allow-scripts allow-forms"
         height={height}
         style={{
-          margin: "10px",
+          margin: "10px 10px 0px",
           marginTop: 0,
           border: "none",
-          borderRadius: "2px",
+          borderRadius: "4px",
           boxShadow: "3px 3px 20px rgba(0,0,0,.9)",
-          background: "white"
+          background: "white",
+          display: "block",
+          padding: 0
         }}
       />
     </section>
